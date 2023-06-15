@@ -17,13 +17,12 @@ Any collection of related information. It could be on paper, a phonebook, on a c
 3. Database Management Systems
 
 It is a special software program that helps users create and maintain a database;
-- 
-    - Makes it easy to manage large amounts of information
-    - Handles security
-    - Backups
-    - Importing/exporting data
-    - Concurrency
-    - Interacts with software applications
+- Makes it easy to manage large amounts of information
+- Handles security
+- Backups
+- Importing/exporting data
+- Concurrency
+- Interacts with software applications
 
 The main operations of DBMS are
     1. CRUD Operations; 
