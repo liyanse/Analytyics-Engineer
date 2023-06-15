@@ -5,7 +5,7 @@ CREATE TABLE employee(
     department VARCHAR(20) UNIQUE
 );
 
-## Describe to see if table structure is similar to what we want
+##Describe to see if table structure is similar to what we want
 DESCRIBE employee;
 
 ## You can also drop table
@@ -13,3 +13,5 @@ DROP TABLE employee;
 
 ## alter table by either adding new columns or dropping columns
  ALTER TABLE employee add salary DECIMAL NOT NULL;
+
+ 
