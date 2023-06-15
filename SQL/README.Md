@@ -117,3 +117,16 @@ It's basically 4 types of languages in one;
 
 ### 4. Data Manipulation Language(DML)
 -Used for inserting, updating and deletig data from the database
+
+### Queries
+
+A set of instructions given to thr RDBMS (wrtten in SQL) that tell the RDBMS what information you want it to retrieve for you
+- Tons od data in db
+- Often hidden in a complex schema
+- Goal is to only get the data you need
+
+## Working with SQL
+
+We are going to download and install two application
+1. MySQL can be downloaded at https://dev.mysql.com/downloads/installer/
+2. PopSQL can be downloaded at https://popsql.com/download
