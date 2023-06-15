@@ -60,3 +60,32 @@ For example, a google search is a query
 All tables in relational databases are going to have columns(vertical entry) and rows(horizontal entry).
 
 When creating tables, we always want to have a special attribute value called Primary Key that is a unique attribute that is used to identify specific rows.
+
+For example,  ID can be the primary key since it is unique for each employee.
+
+### 1. Keys
+1. Primary key 
+
+It is the first key used to identify one and only one instance of an entity uniquely. It could be a surrogate key, a key that was generated randomly and has no meaning in the real world or it could be a natural key, like a person's Id number or social security number.
+
+2. Candidate key
+
+A candidate key is an attribute or set of attributes that can uniquely identify a tuple.
+
+In a table, SSN, Passport_Number, License_Number, etc., are considered a candidate key.
+
+3. Super Key
+
+Super key is an attribute set that can uniquely identify a tuple. A super key is a superset of a candidate key.
+
+The name of two employees can be the same, but their EMPLYEE_ID can't be the same. Hence, this combination can also be a key.
+
+The super key would be EMPLOYEE-ID (EMPLOYEE_ID, EMPLOYEE-NAME).
+
+4. Foreign key
+
+Foreign keys are the column of the table used to point to the primary key of another table.
+
+5. Alternate key
+
+There may be one or more attributes or a combination of attributes that uniquely identify each tuple in a relation. These attributes or combinations of the attributes are called the candidate keys. One key is chosen as the primary key from these candidate keys, and the remaining candidate key, if it exists, is termed the alternate key. In other words, the total number of the alternate keys is the total number of candidate keys minus the primary key. The alternate key may or may not exist. If there is only one candidate key in a relation, it does not have an alternate key.
