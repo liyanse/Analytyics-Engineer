@@ -89,3 +89,13 @@ Foreign keys are the column of the table used to point to the primary key of ano
 5. Alternate key
 
 There may be one or more attributes or a combination of attributes that uniquely identify each tuple in a relation. These attributes or combinations of the attributes are called the candidate keys. One key is chosen as the primary key from these candidate keys, and the remaining candidate key, if it exists, is termed the alternate key. In other words, the total number of the alternate keys is the total number of candidate keys minus the primary key. The alternate key may or may not exist. If there is only one candidate key in a relation, it does not have an alternate key.
+
+## SQL Basics
+
+SQL is a language that is used for interacting with Relational Database Management System (RDBMS)
+
+You can use SQL to get the RDBMS to;
+- Create,retrieve, update & delete data
+- Create & manage databases
+- Design & create databases tables
+- Perform administration tasks( security, user namagement, import, export)
