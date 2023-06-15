@@ -11,3 +11,6 @@ INSERT INTO employee (employee_id, name, department, salary) VALUES
 (4,'Jack','HR','8000')
 ;
 
+## update rows
+update employee set department = "FE"
+where department="Frontend"
