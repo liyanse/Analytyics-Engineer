@@ -99,3 +99,5 @@ You can use SQL to get the RDBMS to;
 - Create & manage databases
 - Design & create databases tables
 - Perform administration tasks( security, user namagement, import, export)
+
+SQL implementations vary between systems like Microsoft SQL Server, Postgress, MySQL
