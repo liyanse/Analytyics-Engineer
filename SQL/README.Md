@@ -3,18 +3,18 @@ The course is designed for beginners to SQL and database management systems, and
 Throughout the course we'll be looking at various topics including schema design, basic C.R.U.D operations, aggregation, nested queries, joins, keys and much more.
 
 ## Databases
-1. What is a Database?
+### 1. What is a Database?
 
 Any collection of related information. It could be on paper, a phonebook, on a computer.
 
-2. Why we need a database?
-    - reduce the amount of time you spend managing data.
-    - analyse data in a variety of ways.
-    - promote a disciplined approach to data management.
-    - turn disparate information into a valuable resource.
-    - improve the quality and consistency of information.
+### 2. Why we need a database?
+- reduce the amount of time you spend managing data.
+- analyse data in a variety of ways.
+- promote a disciplined approach to data management.
+- turn disparate information into a valuable resource.
+- improve the quality and consistency of information.
 
-3. Database Management Systems
+### 3. Database Management Systems
 
 It is a special software program that helps users create and maintain a database;
 - Makes it easy to manage large amounts of information
@@ -31,14 +31,14 @@ The main operations of DBMS are
 - Update, 
 - Delete
 
-4. Types of Databases
-#### Relational Database(SQL)
+### 4. Types of Databases
+##### Relational Database(SQL)
 
 Organize data into one or more tables
 - Each table has columns and rows
 - A unqiue key identifies each row
 
-#### Relational Database(SQL)
+##### Non-Relational Database
 
 Organize data in anything but a traditional table
 - Key value stores
