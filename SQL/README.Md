@@ -17,7 +17,7 @@ Any collection of related information. It could be on paper, a phonebook, on a c
 3. Database Management Systems
 
 It is a special software program that helps users create and maintain a database;
-
+- 
     - Makes it easy to manage large amounts of information
     - Handles security
     - Backups
@@ -25,3 +25,24 @@ It is a special software program that helps users create and maintain a database
     - Concurrency
     - Interacts with software applications
 
+The main operations of DBMS are
+    1. CRUD Operations; 
+- Create, 
+- Read, 
+- Update, 
+- Delete
+
+4. Types of Databases
+#### Relational Database(SQL)
+
+Organize data into one or more tables
+- Each table has columns and rows
+- A unqiue key identifies each row
+
+#### Relational Database(SQL)
+
+Organize data in anything but a traditional table
+- Key value stores
+- Documents such as json or xml
+- Graphs
+- Flexible tables
