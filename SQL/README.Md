@@ -3,7 +3,7 @@ The course is designed for beginners to SQL and database management systems, and
 
 Throughout the course we'll be looking at various topics including schema design, basic C.R.U.D operations, aggregation, nested queries, joins, keys and much more.
 
-## Databases
+## Introduction to Databases
 ### 1. What is a Database?
 
 Any collection of related information. It could be on paper, a phonebook, on a computer.
@@ -54,3 +54,9 @@ Queries are requests made to the dbms for specific information.
 As the database's structure become more and more complex, it becomes more difficult to get the specific pieces of information we want.
 
 For example, a google search is a query
+
+## Understanding Tables
+
+All tables in relational databases are going to have columns(vertical entry) and rows(horizontal entry).
+
+When creating tables, we always want to have a special attribute value called Primary Key that is a unique attribute that is used to identify specific rows.
