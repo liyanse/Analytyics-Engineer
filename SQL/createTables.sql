@@ -9,7 +9,7 @@ CREATE TABLE employee(
 DESCRIBE employee;
 
 ## You can also drop table
- DROP TABLE employee;
+DROP TABLE employee;
 
 ## alter table by either adding new columns or dropping columns
  ALTER TABLE employee add salary DECIMAL NOT NULL;
