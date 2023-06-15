@@ -101,3 +101,19 @@ You can use SQL to get the RDBMS to;
 - Perform administration tasks( security, user namagement, import, export)
 
 SQL implementations vary between systems like Microsoft SQL Server, Postgress, MySQL
+
+It's basically 4 types of languages in one;
+
+### 1. Data Query Language(DQL)
+- Used to query database for information
+- Get information that is already stored there
+
+### 2. Data Definition Language(DDL)
+- Used for defining database schema
+
+### 3. Data Control Language(DCL)
+- Used for controlling access to the data in the database
+- User & permissions management
+
+### 4. Data Manipulation Language(DML)
+-Used for inserting, updating and deletig data from the database
