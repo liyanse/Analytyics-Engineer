@@ -4,6 +4,7 @@ Throughout the course we'll be looking at various topics including schema design
 
 ## Databases
 1. What is a Database?
+
 Any collection of related information. It could be on paper, a phonebook, on a computer.
 
 2. Why we need a database?
