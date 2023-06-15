@@ -46,3 +46,9 @@ Organize data in anything but a traditional table
 - Documents such as json or xml
 - Graphs
 - Flexible tables
+
+### 5. Database QUery
+
+Queries are requests made to the dbms for specific information
+As the database's structure become more and more complex, it becomes more difficult to get the specific pieces of information we wan.
+For example, a google search is a query
