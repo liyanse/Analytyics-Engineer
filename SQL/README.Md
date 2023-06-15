@@ -13,3 +13,15 @@ Any collection of related information. It could be on paper, a phonebook, on a c
     - promote a disciplined approach to data management.
     - turn disparate information into a valuable resource.
     - improve the quality and consistency of information.
+
+3. Database Management Systems
+
+It is a special software program that helps users create and maintain a database;
+
+    - Makes it easy to manage large amounts of information
+    - Handles security
+    - Backups
+    - Importing/exporting data
+    - Concurrency
+    - Interacts with software applications
+
