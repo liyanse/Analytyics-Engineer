@@ -1,3 +1,4 @@
+# STRUCTURED QUERY LANGUAGE (SQL)
 The course is designed for beginners to SQL and database management systems, and will introduce common database management topics.
 
 Throughout the course we'll be looking at various topics including schema design, basic C.R.U.D operations, aggregation, nested queries, joins, keys and much more.
