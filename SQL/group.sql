@@ -12,3 +12,13 @@ WHERE units_sold <=10000
 SELECT dis_name, sale_id
 FROM dis_channels
 WHERE sale_id IN (1001, 1003)
+
+#order alphabetically
+SELECT refiner_name, units_sold
+FROM refinery_clients
+ORDER BY refiner_name ASC
+
+#from largest to smallest
+SELECT refiner_name, units_sold
+FROM refinery_clients
+ORDER BY units_sold DESC
