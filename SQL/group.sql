@@ -22,3 +22,10 @@ ORDER BY refiner_name ASC
 SELECT refiner_name, units_sold
 FROM refinery_clients
 ORDER BY units_sold DESC
+
+#group BY
+SELECT dis_name, location
+FROM dis_channels
+GROUP BY location, dis_name
+ORDER BY location;
+
