@@ -11,7 +11,7 @@ ORDER BY RIGHT(Name, 3), ID ASC;
 
 
 /*
-Ketty gives Eve a task to generate a report containing three columns: Name, Grade and Mark. 
+2. Ketty gives Eve a task to generate a report containing three columns: Name, Grade and Mark. 
 Ketty doesn't want the NAMES of those students who received a grade lower than 8. 
 The report must be in descending order by grade -- i.e. higher grades are entered first. 
 If there is more than one student with the same grade (8-10) assigned to them, 
@@ -30,7 +30,7 @@ WHERE std.marks BETWEEN grd.min_mark AND grd.max_mark
 ORDER BY grd.grade DESC, std.name ASC;
 
 /*
-Julia just finished conducting a coding contest, and she needs your help assembling the leaderboard! 
+3.Julia just finished conducting a coding contest, and she needs your help assembling the leaderboard! 
 Write a query to print the respective hacker_id and name of hackers who achieved full scores 
 for more than one challenge. Order your output in descending order by the total number of challenges 
 in which the hacker earned a full score. 
@@ -44,3 +44,16 @@ where s.score = d.score
 group by h.hacker_id, h.name 
 having count(*) > 1
 order by count(*) desc, h.hacker_id;
+
+/*
+4. Given the CITY and COUNTRY tables,
+ query the names of all the continents (COUNTRY.Continent) and 
+ their respective average city populations (CITY.Population) 
+ rounded down to the nearest integer.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+*/
+SELECT CUN.CONTINENT, FLOOR(AVG(C.POPULATION))
+FROM CITY AS C
+JOIN COUNTRY AS CUN ON C.COUNTRYCODE = CUN.CODE
+GROUP BY CUN.CONTINENT
