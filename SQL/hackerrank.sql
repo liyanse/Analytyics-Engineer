@@ -133,6 +133,7 @@ WHERE LOWER(SUBSTR(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u');
 SELECT DISTINCT CITY
 FROM STATION
 WHERE LOWER(SUBSTR(CITY,-1)) NOT IN ('a', 'e', 'i', 'o', 'u');
+
 /*
 11. P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5): * * * * * 
 * * * * 
@@ -150,3 +151,12 @@ WITH RECURSIVE pattern_cte AS (
 )
 SELECT pattern
 FROM pattern_cte;
+
+/*
+12. Samantha was tasked with calculating the average monthly salaries for all employees in the EMPLOYEES table,
+ but did not realize her keyboard's  key was broken until after completing the calculation. 
+ She wants your help finding the difference between her miscalculation (using salaries with any zeros removed), and the actual average salary.
+Write a query calculating the amount of error (i.e.:  average monthly salaries), and round it up to the next integer.
+*/
+SELECT CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0',''))) 
+FROM EMPLOYEES;
