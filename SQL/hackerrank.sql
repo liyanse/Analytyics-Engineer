@@ -219,7 +219,7 @@ SELECT ROUND(SQRT(POWER(MIN(LAT_N)-MAX(LAT_N),2)+POWER(MIN(LONG_W)-MAX(LONG_W),2
 FROM STATION;
 
 /*
-A median is defined as a number separating the higher half of a data set from the lower half.
+18. A median is defined as a number separating the higher half of a data set from the lower half.
  Query the median of the Northern Latitudes (LAT_N) from STATION and round your answer to  decimal places.
 
 Input Format
@@ -231,3 +231,49 @@ SELECT ROUND(S.LAT_N, 4) FROM STATION S
     WHERE 
         (SELECT COUNT(LAT_N) FROM STATION WHERE LAT_N > S.LAT_N) 
         = (SELECT COUNT(LAT_N) FROM STATION WHERE LAT_N < S.LAT_N);
+
+/*
+19. Harry Potter and his friends are at Ollivander's with Ron, finally replacing Charlie's old broken wand.
+Hermione decides the best way to choose is by determining the minimum number of gold galleons needed to buy each non-evil wand of high power and age. 
+Write a query to print the id, age, coins_needed, and power of the wands that Ron's interested in, sorted in order of descending power. 
+If more than one wand has same power, sort the result in order of descending age.
+*/
+
+SELECT W.ID, P.AGE, W.COINS_NEEDED, W.POWER 
+FROM WANDS AS W
+JOIN WANDS_PROPERTY AS P
+ON (W.CODE = P.CODE) 
+WHERE P.IS_EVIL = 0 AND W.COINS_NEEDED = (SELECT MIN(COINS_NEEDED) 
+                                          FROM WANDS AS X
+                                          JOIN WANDS_PROPERTY AS Y 
+                                          ON (X.CODE = Y.CODE) 
+                                          WHERE X.POWER = W.POWER AND Y.AGE = P.AGE) 
+ORDER BY W.POWER DESC, P.AGE DESC;
+/*
+Julia asked her students to create some coding challenges. Write a query to print the hacker_id, name, and the total number of challenges created by each student. 
+Sort your results by the total number of challenges in descending order. If more than one student created the same number of challenges, then sort the result by hacker_id. 
+If more than one student created the same number of challenges and the count is less than the maximum number of challenges created, then exclude those students from the result.
+*/
+
+SELECT H.HACKER_ID, 
+       H.NAME, 
+       COUNT(C.CHALLENGE_ID) AS C_COUNT
+FROM HACKERS H
+JOIN CHALLENGES C ON C.HACKER_ID = H.HACKER_ID
+GROUP BY H.HACKER_ID, H.NAME
+HAVING C_COUNT = 
+    (SELECT COUNT(C2.CHALLENGE_ID) AS C_MAX
+     FROM CHALLENGES AS C2
+     GROUP BY C2.HACKER_ID 
+     ORDER BY C_MAX DESC LIMIT 1)
+OR C_COUNT IN 
+    (SELECT DISTINCT C_COMPARE AS C_UNIQUE
+     FROM (SELECT H2.HACKER_ID, 
+                  H2.NAME, 
+                  COUNT(CHALLENGE_ID) AS C_COMPARE
+           FROM HACKERS H2
+           JOIN CHALLENGES C ON C.HACKER_ID = H2.HACKER_ID
+           GROUP BY H2.HACKER_ID, H2.NAME) COUNTS
+     GROUP BY C_COMPARE
+     HAVING COUNT(C_COMPARE) = 1)
+ORDER BY C_COUNT DESC, H.HACKER_ID;
