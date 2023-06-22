@@ -112,11 +112,41 @@ WHERE CITY REGEXP '[aeiou]$';
 select distinct city from station where right(city, 1) in ('a','e','i','u','o')
 
 /*
-Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. 
-
+8. Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. 
 Your result cannot contain duplicates.
 */
 SELECT DISTINCT CITY
 FROM STATION
 WHERE LOWER(SUBSTR(CITY, 1, 1)) IN ('a', 'e', 'i', 'o', 'u')
   AND LOWER(SUBSTR(CITY, -1)) IN ('a', 'e', 'i', 'o', 'u');
+
+/*
+9. Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
+*/
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LOWER(SUBSTR(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u');
+
+/*
+10. Query the list of CITY names from STATION that do not end with vowels. Your result cannot contain duplicates.
+*/
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LOWER(SUBSTR(CITY,-1)) NOT IN ('a', 'e', 'i', 'o', 'u');
+/*
+11. P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5): * * * * * 
+* * * * 
+* * * 
+* * 
+*
+ Write an SQL query to print the pattern P(20).
+*/
+WITH RECURSIVE pattern_cte AS (
+  SELECT 20 AS n, REPEAT('* ', 20) AS pattern
+  UNION ALL
+  SELECT n - 1, SUBSTRING_INDEX(pattern, ' ', n - 1)
+  FROM pattern_cte
+  WHERE n > 1
+)
+SELECT pattern
+FROM pattern_cte;
