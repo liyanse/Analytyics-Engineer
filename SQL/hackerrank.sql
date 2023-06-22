@@ -60,7 +60,8 @@ GROUP BY CUN.CONTINENT
 
 
 /*
-5. Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
+5. Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). 
+If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
 The STATION table is described as follows:
 
 Station.jpg
@@ -171,3 +172,62 @@ SELECT MAX(salary*months), COUNT(*)
 FROM Employee
 WHERE (salary*months) = (SELECT MAX(salary*months)
                          FROM Employee);
+
+/*
+14. Query the following two values from the STATION table:
+The sum of all values in LAT_N rounded to a scale of  decimal places.
+The sum of all values in LONG_W rounded to a scale of  decimal places.
+Input Format
+
+The STATION table is described as follows:
+*/
+
+SELECT ROUND(SUM(LAT_N),2), ROUND(SUM(LONG_W),2)
+FROM STATION;
+
+/*
+15. Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than . 
+Round your answer to  decimal places.
+*/
+SELECT ROUND(LONG_W,4)
+FROM STATION
+WHERE LAT_N = (
+    SELECT MAX(LAT_N)
+    FROM STATION
+    WHERE LAT_N < 137.2345
+) 
+
+/*
+16. Consider  and  to be two points on a 2D plane.
+
+ happens to equal the minimum value in Northern Latitude (LAT_N in STATION).
+ happens to equal the minimum value in Western Longitude (LONG_W in STATION).
+ happens to equal the maximum value in Northern Latitude (LAT_N in STATION).
+ happens to equal the maximum value in Western Longitude (LONG_W in STATION).
+Query the Manhattan Distance between points  and  and round it to a scale of  decimal places.
+*/
+SELECT ROUND(ABS(MIN(LAT_N)-MAX(LAT_N))+ABS(MIN(LONG_W)-MAX(LONG_W)),4)
+FROM STATION;
+
+/*
+17. Consider  and  to be two points on a 2D plane where  are the respective minimum and maximum values of Northern Latitude (LAT_N) and  
+are the respective minimum and maximum values of Western Longitude (LONG_W) in STATION.
+
+Query the Euclidean Distance between points  and  and format your answer to display  decimal digits.
+*/
+SELECT ROUND(SQRT(POWER(MIN(LAT_N)-MAX(LAT_N),2)+POWER(MIN(LONG_W)-MAX(LONG_W),2)),4)
+FROM STATION;
+
+/*
+A median is defined as a number separating the higher half of a data set from the lower half.
+ Query the median of the Northern Latitudes (LAT_N) from STATION and round your answer to  decimal places.
+
+Input Format
+*/
+/*
+Working Platform:- MySQL, Oracle
+*/
+SELECT ROUND(S.LAT_N, 4) FROM STATION S 
+    WHERE 
+        (SELECT COUNT(LAT_N) FROM STATION WHERE LAT_N > S.LAT_N) 
+        = (SELECT COUNT(LAT_N) FROM STATION WHERE LAT_N < S.LAT_N);
