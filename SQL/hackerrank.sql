@@ -57,3 +57,38 @@ SELECT CUN.CONTINENT, FLOOR(AVG(C.POPULATION))
 FROM CITY AS C
 JOIN COUNTRY AS CUN ON C.COUNTRYCODE = CUN.CODE
 GROUP BY CUN.CONTINENT
+
+
+/*
+5. Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
+The STATION table is described as follows:
+
+Station.jpg
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+Sample Input
+
+For example, CITY has four entries: DEF, ABC, PQRS and WXY.
+
+Sample Output
+
+ABC 3
+PQRS 4
+Explanation
+
+When ordered alphabetically, the CITY names are listed as ABC, DEF, PQRS, and WXY, with lengths  and . The longest name is PQRS, but there are  options for shortest named city. Choose ABC, because it comes first alphabetically.
+
+Note
+You can write two separate queries to get the desired output. It need not be a single query.
+*/
+
+SELECT CITY, LENGTH(CITY) AS NAME_LENGTH
+FROM STATION
+ORDER BY NAME_LENGTH, CITY
+LIMIT 1;
+
+SELECT CITY, LENGTH(CITY) AS NAME_LENGTH
+FROM STATION
+ORDER BY NAME_LENGTH DESC, CITY
+LIMIT 1;
