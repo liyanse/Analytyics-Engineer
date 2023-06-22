@@ -99,3 +99,24 @@ LIMIT 1;
 SELECT DISTINCT CITY
 FROM STATION
 WHERE CITY REGEXP '^[AEIOU]'
+
+select distinct city from station where left(city, 1) in ('a','e','i','u','o')
+
+/*
+7. Query the list of CITY names ending with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+*/
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '[aeiou]$';
+
+select distinct city from station where right(city, 1) in ('a','e','i','u','o')
+
+/*
+Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. 
+
+Your result cannot contain duplicates.
+*/
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LOWER(SUBSTR(CITY, 1, 1)) IN ('a', 'e', 'i', 'o', 'u')
+  AND LOWER(SUBSTR(CITY, -1)) IN ('a', 'e', 'i', 'o', 'u');
