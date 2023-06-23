@@ -18,4 +18,4 @@ Votes: Understand the level of audience engagement by examining the number of vo
 
 Gross: Explore the financial success of horror movies with the gross column. Discover which films have resonated with audiences and generated significant box office earnings.
 
-With this dataset, users can embark on a journey to unravel horror movie trends, dissect audience preferences, and examine the impact of various factors on the success of horror films. Researchers can analyze the influence of directors, genre preferences across different years, correlations between runtime and ratings, or investigate the relationship between box office performance and critical acclaim.
+With this dataset, users can embark on a journey to unravel horror movie trends, dissect audience preferences, and examine the impact of various factors on the success of horror films. Researchers can analyze the influence of directors, genre preferences across different years, correlations between runtime and ratings, or investigate the relationship between box office performance and critical acclaim.y
