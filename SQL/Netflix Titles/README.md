@@ -30,7 +30,7 @@ How many Directors of shows are missing from the dataset
 
 Who are the most prolific producers of Netflix shows?
 
-     - Raúl Campos, Jan Suter with 18 movie titles
+    - Raúl Campos, Jan Suter with 18 movie titles
     - Marcus Raboy with 14 movie titles
     - Jay Karas with 13 movie titles
     - Jay Chapman with 12 movie titles
