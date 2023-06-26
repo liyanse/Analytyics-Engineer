@@ -72,3 +72,20 @@ FROM (
 GROUP BY word
 ORDER BY occurrence DESC;
 
+/*
+7. Country with the most movies
+*/
+SELECT country, COUNT(*) AS states_per_movie
+FROM dbo.netflix_titles
+WHERE country IS NOT NULL
+GROUP BY country
+ORDER BY states_per_movie DESC;
+
+/*
+8. What is the most produced show category?
+*/
+SELECT listed_in, COUNT(*) AS category
+FROM dbo.netflix_titles
+GROUP BY listed_in
+ORDER BY category DESC;
+
