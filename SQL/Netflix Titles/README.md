@@ -24,6 +24,15 @@ Initially the data has a total of 6235 rows but I removed duplicate values in th
 
 How many Directors of shows are missing from the dataset
 
-1920 rows are empty in the Director's column. They were either left blank or the data wasnot accessible
+1920 rows are empty in the Director's column. They were either left blank or the data was not accessible
 
+3. Question 4
 
+Who are the most prolific producers of Netflix shows?
+
+     - Raúl Campos, Jan Suter with 18 movie titles
+    - Marcus Raboy with 14 movie titles
+    - Jay Karas with 13 movie titles
+    - Jay Chapman with 12 movie titles
+    - Martin Scorsese with 9 movie titles
+    - Steven Spielberg with 9 movie titles
