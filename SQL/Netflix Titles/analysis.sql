@@ -37,7 +37,7 @@ GROUP BY director
 ORDER BY prolific_producer DESC;
 
 /*
-5. Unique years and dates when movies were produced
+Unique years and dates when movies were produced
 Years and dates where a lot of movies were released
 */
 SELECT COUNT(DISTINCT date_added)
@@ -61,7 +61,7 @@ ORDER BY number_of_movies DESC
 ;
 
 /*
-6. What are the most popular keywords in Netflix show descriptions?
+What are the most popular keywords in Netflix show descriptions?
 */
 SELECT word, COUNT(*) AS occurrence
 FROM (
@@ -73,7 +73,7 @@ GROUP BY word
 ORDER BY occurrence DESC;
 
 /*
-7. Country with the most movies
+Country with the most movies
 */
 SELECT country, COUNT(*) AS states_per_movie
 FROM dbo.netflix_titles
@@ -82,7 +82,7 @@ GROUP BY country
 ORDER BY states_per_movie DESC;
 
 /*
-8. What is the most produced show category?
+What is the most produced show category?
 */
 SELECT listed_in, COUNT(*) AS category
 FROM dbo.netflix_titles
@@ -90,10 +90,18 @@ GROUP BY listed_in
 ORDER BY category DESC;
 
 /*
-9. What is the most produced show category per country?
+What is the most produced show category per country?
 */
 SELECT country, listed_in, COUNT(*) AS category
 FROM dbo.netflix_titles
 WHERE country IS NOT NULL
 GROUP BY country, listed_in
 ORDER BY category DESC;
+
+/*
+Looking for my actors?
+*/
+SELECT title, cast , country
+FROM dbo.netflix_titles
+WHERE cast = 'Vin Diesel'
+;
