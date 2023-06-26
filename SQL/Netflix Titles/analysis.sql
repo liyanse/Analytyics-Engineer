@@ -89,3 +89,11 @@ FROM dbo.netflix_titles
 GROUP BY listed_in
 ORDER BY category DESC;
 
+/*
+9. What is the most produced show category per country?
+*/
+SELECT country, listed_in, COUNT(*) AS category
+FROM dbo.netflix_titles
+WHERE country IS NOT NULL
+GROUP BY country, listed_in
+ORDER BY category DESC;
