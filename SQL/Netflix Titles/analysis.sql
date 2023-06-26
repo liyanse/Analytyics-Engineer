@@ -1,8 +1,11 @@
+/*
+Understand the table before we get started
+*/
 SELECT * FROM
 dbo.netflix_titles;
 
 /*
-1. Checking for repetitive title names
+Remove duplicate values
 */
 SELECT DISTINCT title
 FROM dbo.netflix_titles;
@@ -17,28 +20,24 @@ WHERE title IN (
 	GROUP BY title
 	HAVING COUNT(*) >1
 );
-
 /*
-3. How many Directors of showsare missing from the dataset
+3. How many Directors of shows are missing from the dataset
 */
 SELECT show_id, title, cast
 FROM dbo.netflix_titles
 WHERE director IS NULL;
 
 /*
-4. How many Unique categories of movies are there
+4. Who are the most prolific producers of Netflix shows?
 */
-SELECT DISTINCT listed_in
-FROM dbo.netflix_titles;
+SELECT director, COUNT(*) AS prolific_producer
+FROM dbo.netflix_titles
+WHERE  director IS NOT NULL
+GROUP BY director
+ORDER BY prolific_producer DESC;
 
 /*
-5. How many Unique directors of movies are there
-*/
-SELECT DISTINCT director
-FROM dbo.netflix_titles;
-
-/*
-Unique years and dates when movies were produced
+5. Unique years and dates when movies were produced
 Years and dates where a lot of movies were released
 */
 SELECT COUNT(DISTINCT date_added)
@@ -51,6 +50,9 @@ GROUP BY date_added
 ORDER BY number_of_movies DESC
 ;
 
+/*
+What are the most popular years for Netflix show releases?
+*/
 SELECT release_year, COUNT(*) AS number_of_movies
 FROM dbo.netflix_titles
 WHERE release_year IS NOT NULL
@@ -59,26 +61,14 @@ ORDER BY number_of_movies DESC
 ;
 
 /*
-Country with the most movies
+6. What are the most popular keywords in Netflix show descriptions?
 */
-SELECT country, COUNT(*) AS states_per_movie
-FROM dbo.netflix_titles
-WHERE country IS NOT NULL
-GROUP BY country
-ORDER BY states_per_movie DESC;
+SELECT word, COUNT(*) AS occurrence
+FROM (
+    SELECT value AS word
+    FROM dbo.netflix_titles
+    CROSS APPLY STRING_SPLIT(description, ' ')
+) AS subquery
+GROUP BY word
+ORDER BY occurrence DESC;
 
-
-/*
-Find my favorite shows
-*/
-SELECT title, duration, rating, director
-FROM dbo.netflix_titles
-WHERE title = 'F.R.I.E.N.D.S';
-
-SELECT title, duration, rating, director
-FROM dbo.netflix_titles
-WHERE title = 'The King Eternal Monarch';
-
-SELECT title, duration, rating, director
-FROM dbo.netflix_titles
-WHERE title = 'Stranger Things';
