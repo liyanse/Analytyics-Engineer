@@ -1,4 +1,6 @@
-![Netflix](https://github.com/liyanse/Analytyics-Engineer/assets/91662935/6f18c339-e760-431a-92dd-70259020bfb2)
+![Netflix-ok](https://github.com/liyanse/Analytyics-Engineer/assets/91662935/8dc932fd-4ca2-4c5c-9712-49bc9a42d6f0)
+
+
 ### Netflix Movie Title Analysis with SQL
 The dataset was collected from Kaggle(https://www.kaggle.com/datasets/shivamb/netflix-shows)
 
