@@ -13,8 +13,9 @@ For this project, I'll be working with Microsoft SQL Server because it allows me
 I have arranged the file into questions to allow e to get a better understanding of the dataset before we start with visualization.
 
 1. Question 1
-/*
+
 Understand the table before we get started
-*/
-The dataset has the folowing columns; show_id, type	title, director, cast,country,date_added,release_year,rating,duration,listed_in and	description
+
+The dataset has the folowing columns; show_id, type	title, director, cast,country,date_added,release_year,rating,duration,listed_in and	description.
+
 Initially the data has a total of 6235 rows but I removed duplicate values in the title column to remove shows that appeared twice.
