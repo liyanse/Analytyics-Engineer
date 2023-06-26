@@ -19,3 +19,11 @@ Understand the table before we get started
 The dataset has the folowing columns; show_id, type	title, director, cast,country,date_added,release_year,rating,duration,listed_in and	description.
 
 Initially the data has a total of 6235 rows but I removed duplicate values in the title column to remove shows that appeared twice.
+
+2. Question 3
+
+How many Directors of shows are missing from the dataset
+
+1920 rows are empty in the Director's column. They were either left blank or the data wasnot accessible
+
+
