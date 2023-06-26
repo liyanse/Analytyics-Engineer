@@ -59,6 +59,16 @@ ORDER BY number_of_movies DESC
 ;
 
 /*
+Country with the most movies
+*/
+SELECT country, COUNT(*) AS states_per_movie
+FROM dbo.netflix_titles
+WHERE country IS NOT NULL
+GROUP BY country
+ORDER BY states_per_movie DESC;
+
+
+/*
 Find my favorite shows
 */
 SELECT title, duration, rating, director
