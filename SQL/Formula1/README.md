@@ -1,4 +1,4 @@
-##FORMULA 1 ANALYSIS WITH SQL
+## FORMULA 1 ANALYSIS WITH SQL
 
 Project based on Formula 1 World Championship (1950 - 2022). 
 
