@@ -277,3 +277,13 @@ OR C_COUNT IN
      GROUP BY C_COMPARE
      HAVING COUNT(C_COMPARE) = 1)
 ORDER BY C_COUNT DESC, H.HACKER_ID;
+
+SELECT ci.city_name, pr.product_name, ROUND(sum(ii.line_total_price),2) as total_spent
+FROM city ci, customer cu, invoice i, invoice_item ii, product pr
+WHERE ci.id = cu.city_id 
+    AND cu.id = i.customer_id 
+    AND i.id = ii.invoice_id
+    AND  ii.product_id = pr.id
+GROUP BY ci.city_name, pr.product_name
+ORDER BY total_spent, ci.city_name, pr.product_name ; 
+
