@@ -1,6 +1,6 @@
 ## FORMULA 1 ANALYSIS WITH SQL
 
-![f1](https://github.com/liyanse/Analytyics-Engineer/assets/91662935/cda30ee5-0bc6-45b1-ad44-27780fa8f7b5)
+![drivers](https://github.com/liyanse/Analytyics-Engineer/assets/91662935/cba8eff3-c556-45d6-9450-9b29301ca205)
 
 ## Introduction
 Welcome to the thrilling world of 1, where speed, precision, and adrenaline to create one of the most exhilar on planet! Formula 1, often to as is a premier motorsport that showcases the pinnacle of automotive engineering and driver skill.
