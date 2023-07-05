@@ -21,3 +21,21 @@ Project based on Formula 1 World Championship (1950 - 2023).
 The dataset consists of all information on the Formula 1 races, drivers, constructors, qualifying, circuits, lap times, pit stops, championships from 1950 till the latest 2021 season.
 
  https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020
+
+## The Analysis
+
+1. How many races have been held in the Formula 1 dataset?
+
+        1102 as of 2023-05-07
+
+2. What is the average number of laps per race?
+
+3. Which driver has won the most races?
+
+        Definetly Hamilton
+
+4. Which constructor has won the most races?
+
+        Ferrari
+
+5. How many wins does has a specific driver have per GP?
