@@ -48,3 +48,11 @@ The dataset consists of all information on the Formula 1 races, drivers, constru
 
 9. Which driver has the most fastest laps?
 
+17. List winner of each race, with race name and date
+
+18. How many different circuits are included in the dataset?
+
+19. How many different countries have hosted Formula 1 races in the dataset?
+
+20. Some countries seem to have more than 1 circuit so let's do a circuit and country query
+
