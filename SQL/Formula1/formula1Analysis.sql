@@ -180,7 +180,7 @@ GROUP BY circuitRef, country
 ORDER BY [Number of Races] DESC;
 
 /*
-Some countries seem to have more than 1 circuit so let's do a circuit and country query
+20. Some countries seem to have more than 1 circuit so let's do a circuit and country query
 */
 SELECT DISTINCT(circuitRef), country,
 	COUNT(raceId) OVER (PARTITION BY circuitRef) AS 'Circuit Races',
