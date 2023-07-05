@@ -39,3 +39,12 @@ The dataset consists of all information on the Formula 1 races, drivers, constru
         Ferrari
 
 5. How many wins does has a specific driver have per GP?
+
+6. What is the average qualifying position for a specific driver?
+
+7. What is the average qualifying position for a specific constructor? 
+
+8. What is the fastest lap time recorded in the dataset?
+
+9. Which driver has the most fastest laps?
+
