@@ -112,3 +112,49 @@ ORDER BY fastest_lap_time;
 /* 
 I was super confused on this honestly, it's probably the way I imported the time stamp column or something but I got some super messed up results for this
 */
+
+/*
+9. Which driver has the most fastest laps?
+*/
+
+
+/*
+10. How many pole positions has a specific? achieved driver. 
+*/
+
+/*
+11. How many pole positions has a specific achieved constructor?
+*/
+
+/*
+12. What is the average number of pit stops per?
+*/
+
+/*
+13. Which driver has the most pit stops in a single race?
+*/
+
+/*
+14. Which constructor has pit most the stops in a single race?
+*/
+
+/*
+15. How many championships a has specific driver won?
+*/
+
+/*
+16. How many championships has a specific constructor won?
+*/
+
+/*
+17. What is the average age of the drivers in dataset?
+*/
+
+/*
+18. How many different circuits are included in the dataset?
+*/
+
+/*
+19. How many different countries have hosted Formula 1 races in the dataset?
+*/
+
