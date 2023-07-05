@@ -108,18 +108,22 @@ JOIN dbo.lapTimes ON dbo.drivers.driverId = dbo.lapTimes.driverId
 WHERE dbo.lapTimes.time IS NOT NULL
 GROUP BY dbo.drivers.forename, dbo.drivers.surname, dbo.drivers.code
 ORDER BY fastest_lap_time;
-
-/* 
-I was super confused on this honestly, it's probably the way I imported the time stamp column or something but I got some super messed up results for this
-*/
+/* I was super confused on this honestly, it's probably the way I imported the time stamp column or something but I got some super messed up results for this*/
 
 /*
 9. Which driver has the most fastest laps?
 */
+SELECT *
+FROM dbo.results;
 
-
+SELECT COUNT(dbo.results.driverId) AS num_of_fastest_laps
+FROM dbo.drivers
+JOIN dbo.results ON dbo.drivers.driverId = dbo.results.driverId
+WHERE dbo.results.fastestLap IS NOT NULL
+GROUP BY dbo.results.driverId
+ORDER BY num_of_fastest_laps DESC;
 /*
-10. How many pole positions has a specific? achieved driver. 
+10. How many pole positions has a specific driver achieved? 
 */
 
 /*
@@ -147,14 +151,40 @@ I was super confused on this honestly, it's probably the way I imported the time
 */
 
 /*
-17. What is the average age of the drivers in dataset?
+17. List winner of each race, with race name and date
 */
+SELECT drivers.forename AS 'first_name', drivers.surname AS 'last_name',
+		races.name AS 'Grand Prix', races.date AS 'race_date',
+		results.positionOrder as 'P1'
+FROM drivers
+JOIN results ON drivers.driverId = results.driverId
+JOIN races ON results.raceId  = races.raceId
+WHERE results.positionOrder = 1
+ORDER BY race_date DESC;
+
+
 
 /*
 18. How many different circuits are included in the dataset?
+77
 */
-
+SELECT DISTINCT(circuitId), name
+FROM dbo.circuits;
 /*
 19. How many different countries have hosted Formula 1 races in the dataset?
 */
+SELECT circuitRef, circuits.country, COUNT(*) AS 'Number of Races'
+FROM circuits
+INNER JOIN races ON circuits.circuitId = races.circuitId
+GROUP BY circuitRef, country
+ORDER BY [Number of Races] DESC;
 
+/*
+Some countries seem to have more than 1 circuit so let's do a circuit and country query
+*/
+SELECT DISTINCT(circuitRef), country,
+	COUNT(raceId) OVER (PARTITION BY circuitRef) AS 'Circuit Races',
+	COUNT(raceId) OVER (PARTITION BY country) AS 'Country Races'
+FROM dbo.circuits
+INNER JOIN dbo.races ON circuits.circuitId = races.circuitId
+ORDER BY [Country Races] DESC;
