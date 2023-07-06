@@ -122,36 +122,9 @@ JOIN dbo.results ON dbo.drivers.driverId = dbo.results.driverId
 WHERE dbo.results.fastestLap IS NOT NULL
 GROUP BY dbo.results.driverId
 ORDER BY num_of_fastest_laps DESC;
-/*
-10. How many pole positions has a specific driver achieved? 
-*/
 
 /*
-11. How many pole positions has a specific achieved constructor?
-*/
-
-/*
-12. What is the average number of pit stops per?
-*/
-
-/*
-13. Which driver has the most pit stops in a single race?
-*/
-
-/*
-14. Which constructor has pit most the stops in a single race?
-*/
-
-/*
-15. How many championships a has specific driver won?
-*/
-
-/*
-16. How many championships has a specific constructor won?
-*/
-
-/*
-17. List winner of each race, with race name and date
+10. List winner of each race, with race name and date
 */
 SELECT drivers.forename AS 'first_name', drivers.surname AS 'last_name',
 		races.name AS 'Grand Prix', races.date AS 'race_date',
@@ -162,16 +135,14 @@ JOIN races ON results.raceId  = races.raceId
 WHERE results.positionOrder = 1
 ORDER BY race_date DESC;
 
-
-
 /*
-18. How many different circuits are included in the dataset?
+11. How many different circuits are included in the dataset?
 77
 */
 SELECT DISTINCT(circuitId), name
 FROM dbo.circuits;
 /*
-19. How many different countries have hosted Formula 1 races in the dataset?
+12. How many different countries have hosted Formula 1 races in the dataset?
 */
 SELECT circuitRef, circuits.country, COUNT(*) AS 'Number of Races'
 FROM circuits
@@ -180,7 +151,7 @@ GROUP BY circuitRef, country
 ORDER BY [Number of Races] DESC;
 
 /*
-20. Some countries seem to have more than 1 circuit so let's do a circuit and country query
+13. Some countries seem to have more than 1 circuit so let's do a circuit and country query
 */
 SELECT DISTINCT(circuitRef), country,
 	COUNT(raceId) OVER (PARTITION BY circuitRef) AS 'Circuit Races',
