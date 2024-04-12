@@ -1,0 +1,3 @@
+Install VScode
+Set up Windows 3.9 and add it to the computer's path
+Python and Python CLI
