@@ -125,6 +125,15 @@ A set of instructions given to thr RDBMS (wrtten in SQL) that tell the RDBMS wha
 - Often hidden in a complex schema
 - Goal is to only get the data you need
 
+#### Order of Execution
+
+The order of execution of sql queries is not the same as how the queries are written on the database management systems. The most basic order of writing SQL tables is, SELECT () FROM * WHERE GROUP BY ORDER BY;
+However, when executing, we need to focus on the fact all this data is stored in memory therefore this is how data is retrieved whenw e perfom a query. 
+FROM > WHERE > GROUP BY> SELECT > ORDER BY>
+
+For this reason, we need to have a set of rules and regulations for perfoming SQL Queries. These rules include;
+
+
 ## Working with SQL
 
 We are going to download and install two application
